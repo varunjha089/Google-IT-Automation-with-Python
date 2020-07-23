@@ -51,33 +51,40 @@
     InfraError
 """
 
+# def highlight_word(sentence, word):
+#     new_sentence = ''
+#     sentence_list = sentence.split()
+#     # print(sentence_list)
+#
+#     for lists in sentence_list:
+#         if lists.find(word) != -1:
+#             new_sentence += lists.upper()
+#             new_sentence += " "
+#         else:
+#             new_sentence += lists
+#             new_sentence += " "
+#
+#     return new_sentence
+#
+#
+# print(highlight_word("Have a nice day", "nice"))
+# print(highlight_word("Shhh, don't be so loud!", "loud"))
+# print(highlight_word("Automating with Python is fun", "fun"))
 
-def highlight_word(sentence, word):
-    new_sentence = ''
-    sentence_list = sentence.split()
-    # print(sentence_list)
 
-    for lists in sentence_list:
-        if lists.find(word) != -1:
-            new_sentence += lists.upper()
-            new_sentence += " "
-        else:
-            new_sentence += lists
-            new_sentence += " "
+"""
+    Question 3
+    Not quite. Remember that some list functions alter the
+    original list instead of returning a new list. Which
+    function appends all elements of one list to the end of
+    another list, and how are the arguments passed to it?
+"""
 
-    return new_sentence
-
-
-print(highlight_word("Have a nice day", "nice"))
-print(highlight_word("Shhh, don't be so loud!", "loud"))
-print(highlight_word("Automating with Python is fun", "fun"))
-
-# Question 3
 # def combine_lists(list1, list2):
 #     # Generate a new list containing the elements of list2
 #     # Followed by the elements of list1 in reverse order
 #     list2_copy = list2
-#     return list1[::-1] + list2_copy
+#     return list2_copy + list1[::-1]
 #
 #
 # Jamies_list = ["Alice", "Cindy", "Bobby", "Jan", "Peter"]
@@ -121,30 +128,40 @@ print(highlight_word("Automating with Python is fun", "fun"))
 # print(combine_guests(Rorys_guests, Taylors_guests))
 
 
-# Question 7
+"""
+    Question 7
+    InfraError
+"""
 
-# def count_letters(text):
-#     result = {}
-#     # Go through each letter in the text
-#     for word in text.split():
-#         # Check if the letter needs to be counted or not
-#         for letter in word:
-#             print(letter)
-#             if letter not in result:
-#                 result.update({letter})
-#         # Add or increment the value in the dictionary
-#         # ___
-#     return result
-#
-#
-# print(count_letters("AaBbCc"))
-# # Should be {'a': 2, 'b': 2, 'c': 2}
-#
-# print(count_letters("Math is fun! 2+2=4"))
-# # Should be {'m': 1, 'a': 1, 't': 1, 'h': 1, 'i': 1, 's': 1, 'f': 1, 'u': 1, 'n': 1}
-#
-# print(count_letters("This is a sentence."))
-# # Should be {'t': 2, 'h': 1, 'i': 2, 's': 3, 'a': 1, 'e': 3, 'n': 2, 'c': 1}
+
+def count_letters(text):
+    result = {}
+    whitelist = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    final_string =''.join(filter(whitelist.__contains__, text))
+    # Go through each letter in the text
+    for word in final_string.lower().replace(' ', ''):
+        # Check if the letter needs to be counted or not
+        # print(word)
+
+        if word.isalpha() not in result:
+            result[word] = 1
+        else:
+            update_key = result[word]
+            update_key += 1
+            result[word] = update_key
+        # Add or increment the value in the dictionary
+        # ___
+    return result
+
+
+print(count_letters("AaBbCc"))
+# Should be {'a': 2, 'b': 2, 'c': 2}
+
+print(count_letters("Math is fun! 2+2=4"))
+# Should be {'m': 1, 'a': 1, 't': 1, 'h': 1, 'i': 1, 's': 1, 'f': 1, 'u': 1, 'n': 1}
+
+print(count_letters("This is a sentence."))
+# Should be {'t': 2, 'h': 1, 'i': 2, 's': 3, 'a': 1, 'e': 3, 'n': 2, 'c': 1}
 
 
 # Question 8 ( correct )
