@@ -2,46 +2,53 @@
     This python file is for quiz on week - 04
 """
 
-# Question 01
+"""
+    Question 01
+    
+    Not quite. How are you deciding which part of the address is
+    the house number and which is the street name? Are you
+    removing any trailing blank spaces? Properly formatting the
+    return string?
+"""
 
-# def format_address(address_string):
-#     # Declare variables
-#     number = ''
-#     name = ''
-#
-#     # Separate the address string into parts
-#     address_list = address_string.split()
-#
-#     # Traverse through the address parts
-#     for lists in address_list:
-#         # Determine if the address part is the
-#         # house number or part of the street name
-#         if lists.isnumeric():
-#             number = lists
-#
-#         # Does anything else need to be done
-#         # before returning the result?
-#         else:
-#             name += lists
-#
-#     # Return the formatted string
-#     return "house number {} on street named {}".format(number, name)
-#
-#
-# print(format_address("123 Main Street"))
-# # Should print: "house number 123 on street named Main Street"
-#
-# print(format_address("1001 1st Ave"))
-# # Should print: "house number 1001 on street named 1st Ave"
-#
-# print(format_address("55 North Center Drive"))
-# # Should print "house number 55 on street named North Center Drive"
+
+def format_address(address_string):
+    # Declare variables
+    number = ''
+    name = ''
+
+    # Separate the address string into parts
+    address_list = address_string.split()
+
+    # Traverse through the address parts
+    for lists in address_list:
+        # Determine if the address part is the
+        # house number or part of the street name
+        if lists.isnumeric():
+            number = lists
+
+        # Does anything else need to be done
+        # before returning the result?
+        else:
+            name += lists
+
+    # Return the formatted string
+    return "house number {} on street named {}".format(number.strip(), name.strip())
+
+
+print(format_address("123 Main Street"))
+# Should print: "house number 123 on street named Main Street"
+
+print(format_address("1001 1st Ave"))
+# Should print: "house number 1001 on street named 1st Ave"
+
+print(format_address("55 North Center Drive"))
+# Should print "house number 55 on street named North Center Drive"
 
 
 """
     NOT COMPLETED
 """
-
 
 # Question 2
 
@@ -78,7 +85,7 @@
 #
 # print(combine_lists(Jamies_list, Drews_list))
 
-# Question 4
+# Question 4 ( correct )
 
 # def squares(start, end):
 #     return [i**2 for i in range(start, end + 1)]
@@ -89,7 +96,7 @@
 # print(squares(0, 10))  # Should be [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 
-# Question 5
+# Question 5 ( correct )
 
 # def car_listing(car_prices):
 #     result = ""
@@ -100,7 +107,7 @@
 #
 # print(car_listing({"Kia Soul": 19000, "Lamborghini Diablo": 55000, "Ford Fiesta": 13000, "Toyota Prius": 24000}))
 
-# Question 6
+# Question 6 ( correct )
 
 # def combine_guests(guests1, guests2):
 #     # Combine both dictionaries into one, with each key listed
@@ -140,7 +147,7 @@
 # # Should be {'t': 2, 'h': 1, 'i': 2, 's': 3, 'a': 1, 'e': 3, 'n': 2, 'c': 1}
 
 
-# Question 8
+# Question 8 ( correct )
 
 # animal = "Hippopotamus"
 #
@@ -149,14 +156,14 @@
 # print(animal[10:])
 
 
-# Question 9
+# Question 9 ( correct )
 
 # colors = ["red", "white", "blue"]
 # colors.insert(2, "yellow")
 # print(colors)
 
 
-# Question 10
-
-host_addresses = {"router": "192.168.1.1", "localhost": "127.0.0.1", "google": "8.8.8.8"}
-print(host_addresses.keys())
+# Question 10 ( correct )
+#
+# host_addresses = {"router": "192.168.1.1", "localhost": "127.0.0.1", "google": "8.8.8.8"}
+# print(host_addresses.keys())
