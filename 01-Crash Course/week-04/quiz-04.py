@@ -30,6 +30,7 @@
 #         # before returning the result?
 #         else:
 #             name += lists
+#             name += " "
 #
 #     # Return the formatted string
 #     return "house number {} on street named {}".format(number.strip(), name.strip())
@@ -48,29 +49,30 @@
 """
     NOT COMPLETED
     Question 2
-    InfraError
+    > InfraError has left
+    > Not quite. Are you using the replace() and upper() commands with correctly placed parameters?
 """
 
-# def highlight_word(sentence, word):
-#     new_sentence = ''
-#     sentence_list = sentence.split()
-#     # print(sentence_list)
-#
-#     for lists in sentence_list:
-#         if lists.find(word) != -1:
-#             new_sentence += lists.upper()
-#             new_sentence += " "
-#         else:
-#             new_sentence += lists
-#             new_sentence += " "
-#
-#     return new_sentence
-#
-#
-# print(highlight_word("Have a nice day", "nice"))
-# print(highlight_word("Shhh, don't be so loud!", "loud"))
-# print(highlight_word("Automating with Python is fun", "fun"))
 
+def highlight_word(sentence, word):
+    new_sentence = ''
+    sentence_list = sentence.split()
+    # print(sentence_list)
+
+    for lists in sentence_list:
+        if lists.find(word) != -1:
+            new_sentence += lists.upper()
+            new_sentence += " "
+        else:
+            new_sentence += lists
+            new_sentence += " "
+
+    return new_sentence
+
+
+print(highlight_word("Have a nice day", "nice"))
+print(highlight_word("Shhh, don't be so loud!", "loud"))
+print(highlight_word("Automating with Python is fun", "fun"))
 
 """
     Question 3
@@ -114,6 +116,7 @@
 #
 # print(car_listing({"Kia Soul": 19000, "Lamborghini Diablo": 55000, "Ford Fiesta": 13000, "Toyota Prius": 24000}))
 
+
 # Question 6 ( correct )
 
 # def combine_guests(guests1, guests2):
@@ -133,34 +136,33 @@
     InfraError
 """
 
+# def count_letters(text):
+#     result = {}
+#     whitelist = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+#     final_string =''.join(filter(whitelist.__contains__, text)).replace(' ', '')
+#
+#     # Go through each letter in the text
+#     for word in final_string.lower():
+#         # Check if the letter needs to be counted or not
+#
+#         if word not in result:
+#             result[word] = 1
+#         else:
+#             update_key = result[word]
+#             update_key += 1
+#             result[word] = update_key
+#
+#         # Add or increment the value in the dictionary
+#     return result
 
-def count_letters(text):
-    result = {}
-    whitelist = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ')
-    final_string =''.join(filter(whitelist.__contains__, text))
-    # Go through each letter in the text
-    for word in final_string.lower().replace(' ', ''):
-        # Check if the letter needs to be counted or not
-        # print(word)
 
-        if word.isalpha() not in result:
-            result[word] = 1
-        else:
-            update_key = result[word]
-            update_key += 1
-            result[word] = update_key
-        # Add or increment the value in the dictionary
-        # ___
-    return result
-
-
-print(count_letters("AaBbCc"))
+# print(count_letters("AaBbCc"))
 # Should be {'a': 2, 'b': 2, 'c': 2}
 
-print(count_letters("Math is fun! 2+2=4"))
+# print(count_letters("Math is fun! 2+2=4"))
 # Should be {'m': 1, 'a': 1, 't': 1, 'h': 1, 'i': 1, 's': 1, 'f': 1, 'u': 1, 'n': 1}
 
-print(count_letters("This is a sentence."))
+# print(count_letters("This is a sentence."))
 # Should be {'t': 2, 'h': 1, 'i': 2, 's': 3, 'a': 1, 'e': 3, 'n': 2, 'c': 1}
 
 
@@ -181,6 +183,6 @@ print(count_letters("This is a sentence."))
 
 
 # Question 10 ( correct )
-#
+
 # host_addresses = {"router": "192.168.1.1", "localhost": "127.0.0.1", "google": "8.8.8.8"}
 # print(host_addresses.keys())
