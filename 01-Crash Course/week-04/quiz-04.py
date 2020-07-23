@@ -11,66 +11,66 @@
     return string?
 """
 
-
-def format_address(address_string):
-    # Declare variables
-    number = ''
-    name = ''
-
-    # Separate the address string into parts
-    address_list = address_string.split()
-
-    # Traverse through the address parts
-    for lists in address_list:
-        # Determine if the address part is the
-        # house number or part of the street name
-        if lists.isnumeric():
-            number = lists
-
-        # Does anything else need to be done
-        # before returning the result?
-        else:
-            name += lists
-
-    # Return the formatted string
-    return "house number {} on street named {}".format(number.strip(), name.strip())
-
-
-print(format_address("123 Main Street"))
-# Should print: "house number 123 on street named Main Street"
-
-print(format_address("1001 1st Ave"))
-# Should print: "house number 1001 on street named 1st Ave"
-
-print(format_address("55 North Center Drive"))
-# Should print "house number 55 on street named North Center Drive"
+# def format_address(address_string):
+#     # Declare variables
+#     number = ''
+#     name = ''
+#
+#     # Separate the address string into parts
+#     address_list = address_string.split()
+#
+#     # Traverse through the address parts
+#     for lists in address_list:
+#         # Determine if the address part is the
+#         # house number or part of the street name
+#         if lists.isnumeric():
+#             number = lists
+#
+#         # Does anything else need to be done
+#         # before returning the result?
+#         else:
+#             name += lists
+#
+#     # Return the formatted string
+#     return "house number {} on street named {}".format(number.strip(), name.strip())
+#
+#
+# print(format_address("123 Main Street"))
+# # Should print: "house number 123 on street named Main Street"
+#
+# print(format_address("1001 1st Ave"))
+# # Should print: "house number 1001 on street named 1st Ave"
+#
+# print(format_address("55 North Center Drive"))
+# # Should print "house number 55 on street named North Center Drive"
 
 
 """
     NOT COMPLETED
+    Question 2
+    InfraError
 """
 
-# Question 2
 
-# def highlight_word(sentence, word):
-#     new_sentence = ''
-#     sentence_list = sentence.split()
-#
-#     for lists in sentence_list:
-#         if lists == word:
-#             new_sentence += lists.upper()
-#             new_sentence += " "
-#         else:
-#             new_sentence += lists
-#             new_sentence += " "
-#
-#     return new_sentence
-#
-#
-# print(highlight_word("Have a nice day", "nice"))
-# print(highlight_word("Shhh, don't be so loud!", "loud"))
-# print(highlight_word("Automating with Python is fun", "fun"))
+def highlight_word(sentence, word):
+    new_sentence = ''
+    sentence_list = sentence.split()
+    # print(sentence_list)
 
+    for lists in sentence_list:
+        if lists.find(word) != -1:
+            new_sentence += lists.upper()
+            new_sentence += " "
+        else:
+            new_sentence += lists
+            new_sentence += " "
+
+    return new_sentence
+
+
+print(highlight_word("Have a nice day", "nice"))
+print(highlight_word("Shhh, don't be so loud!", "loud"))
+print(highlight_word("Automating with Python is fun", "fun"))
 
 # Question 3
 # def combine_lists(list1, list2):
